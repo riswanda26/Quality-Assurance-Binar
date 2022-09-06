@@ -1,0 +1,630 @@
+{
+	"info": {
+		"_postman_id": "63ca852f-c21d-4fbb-ba66-805460f792d8",
+		"name": "Gold-Challange",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{base url}}/auth/v1/register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.value).to.eql(100);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"pass\",\r\n    \"username\": \"email\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/auth/v1/register",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/auth/v1/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"password\": \"pass\",\r\n  \"username\": \"email\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/auth/v1/login",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/auth/v1/forgot",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"username\": \"email\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/auth/v1/forgot",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/auth/v1/change",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+							"});\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"new_password\": \"8 digit\",\r\n  \"old_password\": \"8 digit\",\r\n  \"username\": \"email\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/auth/v1/change",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/api/v1/dashboard?employeeid={id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base url}}/api/v1/dashboard?employeeid={id}",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"dashboard"
+					],
+					"query": [
+						{
+							"key": "employeeid",
+							"value": "{id}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/api/v1/dashboard/direktur?employeeid={id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base url}}/api/v1/dashboard/direktur?employeeid={id}",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"dashboard",
+						"direktur"
+					],
+					"query": [
+						{
+							"key": "employeeid",
+							"value": "{id}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/api/v1/grades",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base url}}/api/v1/grades",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"grades"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/api/v1/grades/level?levelid={id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base url}}/api/v1/grades/level?levelid={id}",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"grades",
+						"level"
+					],
+					"query": [
+						{
+							"key": "levelid",
+							"value": "{id}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/api/v1/employess",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base url}}/api/v1/employess",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employess"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/api/v1/employess",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": \"9176887DA\",\r\n  \"education\": \"S1 TI\",\r\n  \"email\": \"email@gmail.co,\",\r\n  \"employee_start_date\": \"2022-06-09T11:15:35.181Z\",\r\n  \"grade_id\": 6,\r\n  \"id\": 0,\r\n  \"name\": \"andika bayangkara\",\r\n  \"phone\": \"123123123\",\r\n  \"position_desc\": \"asfasfadfadfadf\",\r\n  \"position_id\": 1,\r\n  \"position_start_date\": \"2022-06-09T11:15:35.181Z\",\r\n  \"spouse\": \"PLN\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base url}}/api/v1/employess",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employess"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/api/v1/employess/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base url}}/api/v1/employess/{id}",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employess",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/api/v1/employess/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": \"9176887DA\",\r\n  \"education\": \"S1 TI\",\r\n  \"email\": \"email@gmail.co,\",\r\n  \"employee_start_date\": \"2022-06-09T11:15:35.181Z\",\r\n  \"grade_id\": 6,\r\n  \"id\": 0,\r\n  \"name\": \"Andika Bayangkara\",\r\n  \"phone\": \"123123123\",\r\n  \"position_desc\": \"asfasfadfadfadf\",\r\n  \"position_id\": 1,\r\n  \"position_start_date\": \"2022-06-09T11:15:35.181Z\",\r\n  \"spouse\": \"PLN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/api/v1/employess/{id}",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employess",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base url}}/api/v1/employess/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base url}}/api/v1/employess/{id}",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employess",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
